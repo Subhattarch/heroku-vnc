@@ -70,7 +70,7 @@ RUN set -ex; \
 	anydesk
 
 
-ENV UNAME pacat
+#ENV UNAME pacat
 
 RUN apt-get update \
  && DEBIAN_FRONTEND=noninteractive apt-get install --yes pulseaudio-utils
