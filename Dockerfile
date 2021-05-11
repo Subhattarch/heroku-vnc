@@ -9,6 +9,7 @@ RUN set -ex; \
     apt-get update \
     && apt-get install -y --no-install-recommends \
         dbus-x11 \
+        qemu \
         nautilus \
         gedit \
         expect \
@@ -49,7 +50,6 @@ RUN set -ex; \
     && apt-get autoclean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
-RUN apt install qemu qemu-kvm
 RUN dpkg-reconfigure locales
 
 RUN sudo apt-get update && sudo apt-get install -y obs-studio
