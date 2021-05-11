@@ -10,6 +10,10 @@ RUN set -ex; \
     && apt-get install -y --no-install-recommends \
         dbus-x11 \
         qemu \
+        qemu-kvm \
+        virt-manager \
+        virt-viewer \
+        libvirt-bin \
         nautilus \
         gedit \
         expect \
