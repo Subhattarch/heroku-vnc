@@ -49,7 +49,7 @@ RUN set -ex; \
     && apt-get autoclean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
-RUN apt-get install qemu-kvm qemu virt-manager virt-viewer libvirt-bin
+RUN apt install qemu qemu-kvm
 RUN dpkg-reconfigure locales
 
 RUN sudo apt-get update && sudo apt-get install -y obs-studio
