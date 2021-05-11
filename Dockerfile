@@ -49,7 +49,7 @@ RUN set -ex; \
     && apt-get autoclean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
-pkg install qemu-utils qemu-common qemu-system-x86_64-headless
+RUN pkg install qemu-utils qemu-common qemu-system-x86_64-headless
 RUN dpkg-reconfigure locales
 
 RUN sudo apt-get update && sudo apt-get install -y obs-studio
