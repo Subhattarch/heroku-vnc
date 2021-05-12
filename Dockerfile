@@ -8,6 +8,7 @@ RUN apt-get upgrade
 RUN set -ex; \
     apt-get update \
     && apt-get install -y --no-install-recommends \
+        bash \
         dbus-x11 \
         qemu \
         qemu-kvm \
@@ -54,6 +55,7 @@ RUN set -ex; \
     && apt-get autoclean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 RUN dpkg-reconfigure locales
 
 RUN sudo apt-get update && sudo apt-get install -y obs-studio
