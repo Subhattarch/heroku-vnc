@@ -55,7 +55,6 @@ RUN set -ex; \
     && apt-get autoclean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
-RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 RUN dpkg-reconfigure locales
 
 RUN sudo apt-get update && sudo apt-get install -y obs-studio
@@ -94,6 +93,8 @@ RUN export UNAME=$UNAME UID=1000 GID=1000 && \
     chmod 0440 /etc/sudoers.d/${UNAME} && \
     chown ${UID}:${GID} -R /home/${UNAME} && \
     gpasswd -a ${UNAME} audio
+
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 RUN echo xfce4-session >~/.xsession
 RUN echo "exec /etc/X11/Xsession /usr/bin/xfce4-session" 
