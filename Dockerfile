@@ -6,9 +6,8 @@ FROM ubuntu:18.04
 
 RUN apt-get upgrade
 RUN set -ex; \
-    DEBIAN_FRONTENT=noninteractive \
     apt-get update \
-    && apt-get install -y --no-install-recommends \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
         bash \
         dbus-x11 \
         qemu \
