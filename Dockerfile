@@ -6,7 +6,7 @@ FROM ubuntu:18.04
 
 RUN apt-get upgrade
 RUN set -ex; \
-    DEBIAN_FRONTENT=noninteractive
+    DEBIAN_FRONTENT=noninteractive \
     apt-get update \
     && apt-get install -y --no-install-recommends \
         bash \
